@@ -36,4 +36,17 @@ export class LoginPage {
         await expect(this.page.locator('[data-test="error"]')).toHaveText('Epic sadface: Username and password do not match any user in this service');
     }
 
+    async assertOutcome(expectedOutcome: "loggedIn" | "lockedUser" | "unknownUser") {
+        switch (expectedOutcome) {
+            case "loggedIn":
+                await this.checkedLoggedIn();
+                break;
+            case "lockedUser":
+                await this.checkedLockedUser();
+                break;
+            case "unknownUser":
+                await this.checkedUnknownUser();
+                break;
+        }
+    }
 }

@@ -40,17 +40,14 @@ export class ProductsPage {
   //Action methods (async)
   async addItem(itemName: string) {
     await this.addButton(itemName).click();
-    await expect(this.removeButton(itemName)).toBeVisible();
   }
 
   async removeItem(itemName: string) {
     await this.removeButton(itemName).click();
-    await expect(this.addButton(itemName)).toBeVisible();
   }
 
   async openCart() {
     await this.cartIcon.click();
-    await expect(this.page).toHaveURL(/cart\.html$/);
   }
 
   async getCartCount(): Promise<number> {

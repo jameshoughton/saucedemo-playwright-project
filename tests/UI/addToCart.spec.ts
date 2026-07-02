@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import { LoginPage } from './pages/login-page';
-import { ProductsPage } from './pages/products-page';
+import { LoginPage } from '../pages/login-page';
+import { ProductsPage } from '../pages/products-page';
 
 //test data 
 const validUsername = 'standard_user'; 
